@@ -3,7 +3,6 @@
 #Feature engineering: Creates binary features for late payment and high usage
 #Modeling: Logistic Regression and Random Forest
 #Evaluation: Confusion matrix and classification report
-#Deployment-ready: Models saved as .pkl files
 
 
 # modeling_pipeline.py
@@ -16,10 +15,10 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix
 
 # Step 1: Load datasets
-customers = pd.read_csv('data/telecom_customers.csv')
-usage = pd.read_csv('data/telecom_usage.csv')
-billing = pd.read_csv('data/telecom_billing.csv')
-tickets = pd.read_csv('data/telecom_tickets.csv')
+customers = pd.read_csv('telecom_customers.csv')
+usage = pd.read_csv('telecom_usage.csv')
+billing = pd.read_csv('telecom_billing.csv')
+tickets = pd.read_csv('telecom_tickets.csv')
 
 # Step 2: Merge datasets
 df = customers.merge(usage, on='customer_id') \
